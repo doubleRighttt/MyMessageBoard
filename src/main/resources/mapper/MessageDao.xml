@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hzh.MyMessageBoard.dao.MessageDao">
+    <!--查询所有留言-->
+    <select id="ListAll" resultType="com.hzh.MyMessageBoard.pojo.Message">
+        select message,u.userId,userName,row,line from t_message as m,t_user as u where m.userId=u.userId order by messageId;
+    </select>
+</mapper>
